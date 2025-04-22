@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Riddle Generator</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f0f4f8;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    #riddle-box {
+      margin-top: 30px;
+      padding: 20px;
+      width: 80%;
+      max-width: 500px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+      font-size: 1.2rem;
+      color: #444;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 1rem;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🧠 Riddle Generator</h1>
+  <button onclick="generateRiddle()">Show Me a Riddle</button>
+  <div id="riddle-box">Click the button to get a riddle!</div>
+
+  <script>
+    const riddles = [
+      "What has to be broken before you can use it?<br><strong>Answer:</strong> An egg.",
+      "I’m tall when I’m young, and I’m short when I’m old. What am I?<br><strong>Answer:</strong> A candle.",
+      "What month of the year has 28 days?<br><strong>Answer:</strong> All of them.",
+      "What is full of holes but still holds water?<br><strong>Answer:</strong> A sponge.",
+      "What question can you never answer yes to?<br><strong>Answer:</strong> Are you asleep yet?",
+      "What gets wetter the more it dries?<br><strong>Answer:</strong> A towel.",
+      "The more you take, the more you leave behind. What are they?<br><strong>Answer:</strong> Footsteps."
+    ];
+
+    function generateRiddle() {
+      const randomIndex = Math.floor(Math.random() * riddles.length);
+      document.getElementById("riddle-box").innerHTML = riddles[randomIndex];
+    }
+  </script>
+
+</body>
+</html>
